@@ -1,0 +1,39 @@
+type Challenger {
+  id: ID!
+  avatarUrl: String
+  description: String
+  hitPoints: Int
+  attack: Int
+  damage: Int
+  record: Record
+}
+
+type Record {
+  wins: Int!
+  losses: Int!
+}
+
+type Query {
+  #"Get repositories scoreboard"
+  getRecord(id: ID!): Record!
+  getPlayers: [Challenger]!
+  challenger(id: ID!): Challenger!
+}
+
+type Mutation {
+  fight(leftId: ID!, rightId: ID!): DeathmatchResult!
+}
+
+type DeathmatchResult{
+  rounds: [[Int]]!
+  winner: String!
+  winnerAvatarUrl: String!
+  right: ChallengerResult!
+  left: ChallengerResult!
+}
+
+type ChallengerResult {
+  id: ID!
+  hitPoints: Int!
+  damage: Int!
+}

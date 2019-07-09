@@ -1,0 +1,28 @@
+{
+  "name": "repository-deathmatch",
+  "version": "1.0.0",
+  "description": "Two github repositories enter the ring.  Only one leaves alive....",
+  "main": "index.js",
+  "private": true,
+  "author": "Jack Smith <jack@sythas.com>",
+  "license": "MIT",
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sythas/repository-deathmatch.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sythas/repository-deathmatch/issues"
+  },
+  "homepage": "https://github.com/sythas/repository-deathmatch#readme",
+  "devDependencies": {
+    "mdx-deck": "^2.5.0",
+    "prettier": "^1.18.2"
+  },
+  "scripts": {
+    "present": "mdx-deck ./docs/svelte.mdx"
+  }
+}
